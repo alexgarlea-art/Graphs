@@ -1,5 +1,5 @@
 import java.util.ArrayList;
 
 public class Graph {
-    private ArrayList<>;
+    private ArrayList<Node> nodes;
 }
