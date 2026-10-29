@@ -16,5 +16,10 @@ public class Node<T> {
         return this.value;
     }
 
-
+    @Override
+    public String toString(){
+        return String.format(
+                "| Node: %3s | --%3s-- | Node: %3s |"
+        );
+    }
 }
