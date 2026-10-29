@@ -1,5 +1,5 @@
 public class Adjacency {
-    private Node node;
+    private final Node node;
     private int weight;
 
     public Adjacency(Node node, int weight) {
