@@ -1,29 +1,20 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
-public class Node {
-    private final char name;
-    private ArrayList<Adjacency> adjacencies;
+public class Node<T> {
+    private final T value;
+    private HashMap<Node<T>, Integer> adjacencies; // Integer is the weight of the arch
 
-    public Node(char name){
-        this.name = name;
+    public Node(T value){
+        this.value = value;
     }
 
-    public char getName() {
-        return name;
+    public void addAdj(Node<T> node, int weight){
+        adjacencies.put(node, weight);
     }
 
-    public void addAdj(Node n, int weight){
-        adjacencies.add(new Adjacency(n,weight));
+    public T getValue() {
+        return this.value;
     }
 
-    public void rmAdj(Node node){
-        for (Adjacency a : adjacencies){
-            if(a.getNode() == node){
-                adjacencies.remove(a);
-                break;
-            }
-        }
-    }
 
 }
