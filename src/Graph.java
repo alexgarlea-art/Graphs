@@ -1,7 +1,7 @@
 import java.util.HashMap;
 
 public abstract class Graph<T> {
-    private HashMap<T, Node<T>> nodes;
+    protected HashMap<T, Node<T>> nodes;
 
     public Graph(){
     }
