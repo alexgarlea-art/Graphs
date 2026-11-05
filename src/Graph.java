@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Graph<T> {
+public abstract class Graph<T> {
     private HashMap<T, Node<T>> nodes;
 
     public Graph(){
@@ -12,5 +12,7 @@ public class Graph<T> {
         }else IO.println("Element already inside the graph.");
     }
 
-
+    public void addEdge(Node<T> start, Node<T> dest, float weight){
+        start.addAdj(dest, weight);
+    }
 }

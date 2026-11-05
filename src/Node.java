@@ -2,13 +2,13 @@ import java.util.HashMap;
 
 public class Node<T> {
     private final T value;
-    private HashMap<Node<T>, Integer> adjacencies; // Integer is the weight of the arch
+    private HashMap<Node<T>,Float > adjacencies; // float is the weight of the arch
 
     public Node(T value){
         this.value = value;
     }
 
-    public void addAdj(Node<T> node, int weight){
+    protected void addAdj(Node<T> node, float weight){
         adjacencies.put(node, weight);
     }
 
@@ -18,8 +18,10 @@ public class Node<T> {
 
     @Override
     public String toString(){
-        return String.format(
-                "| Node: %3s | --%3s-- | Node: %3s |"
-        );
+        StringBuilder sb = new StringBuilder();
+        this.adjacencies.forEach(((node, floating) -> {
+            sb.append(this.value).append(", ").append(node.value).append(", ").append(floating);
+        }));
+        return sb.toString();
     }
 }
