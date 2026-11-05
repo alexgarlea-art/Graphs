@@ -6,13 +6,13 @@ public abstract class Graph<T> {
     public Graph(){
     }
 
-    public void addNode(Node<T> n){
-        if(!nodes.containsKey(n.getValue())){
-            nodes.put(n.getValue(), n);
+    public void addNode(T value){
+        if(!nodes.containsKey(n)){
+            nodes.put();
         }else IO.println("Element already inside the graph.");
     }
 
-    public void addEdge(Node<T> start, Node<T> dest, float weight){
-        start.addAdj(dest, weight);
+    public void addEdge(T start, T dest, float weight){
+        nodes.get(start).addAdj(nodes.get(dest), weight);
     }
 }
