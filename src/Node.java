@@ -19,7 +19,7 @@ public class Node<T> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("Value: %5s| Adjacencies:\n", this.value));
+        sb.append(String.format("Value: %5s | Adjacencies:\n", this.value));
 
         adjacencies.forEach((key, value) -> sb.append(String.format(
                 "%25s[Value: %5s | Weight: %2s]\n",

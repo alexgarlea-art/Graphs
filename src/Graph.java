@@ -13,7 +13,6 @@ public abstract class Graph<T> {
     }
 
     public void addEdge(T start, T dest, float weight){
-        nodes.get(start).addAdj(nodes.get(dest), weight);
     }
 
     @Override
