@@ -22,7 +22,8 @@ public class Node<T> {
         sb.append(String.format("Value: %5s| Adjacencies:\n", this.value));
 
         adjacencies.forEach((key, value) -> sb.append(String.format(
-                "                           [Value: %5s | Weight: %2s]\n",
+                "%25s[Value: %5s | Weight: %2s]\n",
+                " ",
                 key.getValue(),
                 value
         )));
