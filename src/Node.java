@@ -2,7 +2,7 @@ import java.util.HashMap;
 
 public class Node<T> {
     private final T value;
-    private HashMap<Node<T>,Float > adjacencies; // float is the weight of the arch
+    private final HashMap<Node<T>,Float > adjacencies = new HashMap<>(); // float is the weight of the arch
 
     public Node(T value){
         this.value = value;
@@ -17,11 +17,15 @@ public class Node<T> {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder sb = new StringBuilder();
-        this.adjacencies.forEach(((node, floating) -> {
-            sb.append(this.value).append(", ").append(node.value).append(", ").append(floating);
-        }));
+        sb.append(String.format("Value: %5s| Adjacencies:\n", this.value));
+
+        adjacencies.forEach((key, value) -> sb.append(String.format(
+                "                           [Value: %5s | Weight: %2s]\n",
+                key.getValue(),
+                value
+        )));
         return sb.toString();
     }
 }
